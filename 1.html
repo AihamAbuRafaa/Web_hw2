@@ -1,0 +1,26 @@
+<html>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+function myFunction() {
+    var d = document.getElementById("myTextarea");
+    var x = document.getElementById("myIframe");
+    var y = (x.contentWindow || x.contentDocument);
+    if (y.document)y = y.document;
+	y.write(d.value);
+	y.close();
+}
+
+</script>
+<button style=" background-color : green; font : 10px; " onclick="myFunction()">Run »</button>
+<div>
+<textarea id="myTextarea" oninput="myFunction()" rows="40" cols="50">
+</textarea>
+<iframe id="myIframe" height="600" width="900">
+<div>
+</div>
+</iframe>
+</div>
+</body>
+</html>	
